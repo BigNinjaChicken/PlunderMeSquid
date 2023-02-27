@@ -36,3 +36,17 @@ int UAC_Test::MyFunction(int32 MyIntParameter, FString MyStringParameter)
 {
 	return 1;
 }
+
+void UAC_Test::FixNav()
+{
+	UWorld* World = GetWorld();
+
+	// get a reference to the navigation system
+	UNavigationSystemV1* NavSys = UNavigationSystemV1::GetCurrent(World);
+
+	// get a reference to the actor or component that you want to update
+	AActor* MyActor = GetOwner(); // or use any other method to get a reference to the actor/component
+
+	// update the NavMesh for the actor/component
+	NavSys->UpdateComponentInNavOctree(MyActor);
+}

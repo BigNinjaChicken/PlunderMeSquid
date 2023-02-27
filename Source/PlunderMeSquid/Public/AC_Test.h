@@ -2,6 +2,9 @@
 
 #pragma once
 
+#include "Engine/World.h"
+#include "AI/Navigation/NavigationSystem.h"
+
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
 #include "AC_Test.generated.h"
@@ -26,4 +29,6 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "MyCategory")
 		int MyFunction(int32 MyIntParameter, FString MyStringParameter);
+	UFUNCTION(BlueprintCallable, Category = "NavMesh")
+		void FixNav();
 };
